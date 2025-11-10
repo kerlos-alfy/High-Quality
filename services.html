@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>الخدمات — YourBrand</title>
+  <link rel="stylesheet" href="assets/styles.css"/>
+</head>
+<body class="bg-lux bg-grid">
+  
+  <div class="topbar">
+    <div class="container" style="padding:8px 0; display:flex; align-items:center; justify-content:space-between;">
+      <div style="display:flex; gap:16px" class="muted">
+        <span>📞 +971 50 000 0000</span>
+        <span class="hidden-md">✉️ info@yourbrand.ae</span>
+        <span class="hidden-md">📍 أبوظبي – الإمارات</span>
+      </div>
+      <a href="https://wa.me/971500000000" target="_blank" class="muted" style="text-decoration:underline">WhatsApp</a>
+    </div>
+  </div>
+  <header class="navbar">
+    <div class="container" style="padding:12px 0; display:flex; align-items:center; justify-content:space-between;">
+      <div style="display:flex; align-items:center; gap:12px">
+        <video id="logoHeader" class="video-logo" src="logo.MP4" muted autoplay loop playsinline preload="auto"></video>
+        <!-- <img id="logoHeaderFallback" src="assets/logo-fallback.png" alt="YourBrand" class="hidden" style="height:40px"/> -->
+        <strong>High Quality — Powder Coating</strong>
+      </div>
+      <nav class="nav">
+        <a href="index.html">الرئيسية</a>
+        <a href="products.html">المنتجات</a>
+        <a href="services.html">الخدمات</a>
+        <a href="projects.html">المشاريع</a>
+        <a href="contact.html">تواصل</a>
+      </nav>
+      <a href="contact.html#quote" class="btn btn-primary">اطلب عينة</a>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1 style="margin:0 0 6px 0">الخدمات</h1>
+      <p class="muted">مطابقة ألوان RAL، توصيف فني، دعم موقع، اختبارات QC، وثائق TDS/SDS.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container grid-3">
+      <div class="card" style="padding:18px"><b>مطابقة RAL 24–48 س</b><div class="muted">عينات سريعة</div></div>
+      <div class="card" style="padding:18px"><b>دعم فني</b><div class="muted">حلول تطبيق وصيانة</div></div>
+      <div class="card" style="padding:18px"><b>لوجستيات توريد</b><div class="muted">تسليم موثوق</div></div>
+    </div>
+  </section>
+  
+  <footer>
+    <div class="container" style="padding:28px 0; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px">
+      <div style="display:flex; align-items:center; gap:10px">
+        <video id="logoFooter" class="video-logo" src="logo.MP4" muted autoplay loop playsinline preload="auto"></video>
+        <!-- <img id="logoFooterFallback" src="assets/logo-fallback.png" alt="YourBrand" class="hidden" style="height:40px"/> -->
+        <strong>High Quality— Powder Coatings</strong>
+      </div>
+      <div class="muted" style="font-size:12px">© <span id="year"></span> High Quality— All rights reserved.</div>
+    </div>
+  </footer>
+  <script src="assets/main.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+</body>
+</html]
