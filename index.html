@@ -24,6 +24,9 @@
             hqLine: '#1f2937',
             hqGreen: '#4e7b3b',
             hqAccent: '#fbbf24'
+          },
+          boxShadow: {
+            hqSoft: '0 18px 45px rgba(0,0,0,0.65)',
           }
         }
       }
@@ -50,16 +53,58 @@
       background: #374151;
       border-radius: 999px;
     }
+        .floating-wa {
+      position: fixed;
+      right: 1.25rem;
+      bottom: 1.25rem;
+      z-index: 50;
+    }
+
+    @media (min-width: 768px) {
+      .floating-wa {
+        right: 1.75rem;
+        bottom: 1.75rem;
+      }
+    }
+
+    .floating-wa-btn {
+      animation: float-wa 2.8s ease-in-out infinite;
+    }
+
+    .floating-wa-ring {
+      animation: pulse-wa 2.8s ease-out infinite;
+    }
+
+    @keyframes float-wa {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-7px); }
+    }
+
+    @keyframes pulse-wa {
+      0% {
+        opacity: 0.5;
+        transform: scale(1);
+      }
+      70% {
+        opacity: 0;
+        transform: scale(1.7);
+      }
+      100% {
+        opacity: 0;
+        transform: scale(1.7);
+      }
+    }
+
   </style>
 </head>
-<body class="text-slate-50 font-body">
+<body class="text-slate-50 font-body" id="top">
 
   <!-- NAVBAR -->
   <header class="sticky top-0 z-40 bg-hqPanel/95 backdrop-blur border-b border-hqLine">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between gap-4">
       <!-- Logo -->
       <a href="#top" class="flex items-center gap-3 group">
-        <div class="h-9 w-9 rounded-xl bg-gradient-to-br from-hqGreen to-emerald-700 flex items-center justify-center text-xs font-extrabold shadow-[0_8px_30px_rgba(0,0,0,0.45)] group-hover:scale-[1.03] transition">
+        <div class="h-9 w-9 rounded-xl bg-gradient-to-br from-hqGreen to-emerald-700 flex items-center justify-center text-xs font-extrabold shadow-[0_8px_30px_rgba(0,0,0,0.45)] group-hover:scale-[1.05] transition-transform">
           HQ
         </div>
         <div class="leading-tight">
@@ -107,7 +152,7 @@
         </button>
 
         <a href="https://wa.me/971501991974?text=Hello%20HQ%20Coating%2C%20I%20want%20to%20send%20photos%20for%20powder%20coating."
-           class="inline-flex items-center rounded-full bg-hqGreen px-4 py-2 text-[11px] font-semibold text-white shadow-[0_10px_30px_rgba(0,0,0,0.6)] hover:brightness-110 transition">
+           class="inline-flex items-center rounded-full bg-hqGreen px-4 py-2 text-[11px] font-semibold text-white shadow-[0_10px_30px_rgba(0,0,0,0.6)] hover:brightness-110 hover:translate-y-[1px] transition">
           <span class="lang-en">WhatsApp inquiry</span>
           <span class="lang-ar hidden" dir="rtl">استفسار عبر واتساب</span>
         </a>
@@ -167,14 +212,14 @@
   </header>
 
   <!-- MAIN -->
-  <main id="top" class="relative">
+  <main class="relative">
 
     <!-- =============== HERO =============== -->
-    <section class="py-16 md:py-20 min-h-[70vh] flex items-center">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-12 items-center">
+    <section class="py-14 sm:py-16 md:py-20 min-h-[70vh] flex items-center">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
         <!-- LEFT: TEXT -->
-        <div class="space-y-4">
-          <div class="inline-flex items-center gap-2 rounded-full border border-hqLine/70 bg-hqPanel/60 px-3 py-1">
+        <div class="space-y-4 order-1 lg:order-none">
+          <div class="inline-flex items-center gap-2 rounded-full border border-hqLine/70 bg-hqPanel/60 px-3 py-1 shadow-hqSoft/40">
             <span class="h-1 w-5 rounded-full bg-hqAccent"></span>
             <div class="flex flex-col">
               <p class="text-[11px] tracking-[0.22em] uppercase text-slate-300 lang-en">
@@ -186,7 +231,7 @@
             </div>
           </div>
 
-          <h1 class="font-heading text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight">
+          <h1 class="font-heading text-[1.9rem] sm:text-[2.3rem] md:text-[2.8rem] lg:text-5xl font-semibold leading-snug sm:leading-tight">
             <span class="lang-en">
               Engineered powder-coated finishes
               <span class="text-hqAccent">built for real projects.</span>
@@ -197,33 +242,35 @@
             </span>
           </h1>
 
-          <p class="text-sm text-slate-300 max-w-xl lang-en">
-            A factory-controlled powder-coating line delivering durable, consistent metal finishes for
-            architectural, commercial, and industrial applications.
-          </p>
-          <p class="text-sm sm:text-[15px] text-slate-200 leading-relaxed lang-ar hidden" dir="rtl">
-            خط بودرة الطلاء عندنا متحكّم فيه داخل المصنع، وكل شيّ محسوب عشان يعطيكم تشطيب قوي وثابت يناسب الشغل المعماري، التجاري، والصناعي.
-          </p>
+          <div class="space-y-2.5 sm:space-y-3">
+            <p class="text-sm text-slate-300 max-w-xl lang-en">
+              A factory-controlled powder-coating line delivering durable, consistent metal finishes for
+              architectural, commercial, and industrial applications.
+            </p>
+            <p class="text-sm sm:text-[15px] text-slate-200 leading-relaxed lang-ar hidden" dir="rtl">
+              خط بودرة الطلاء عندنا متحكّم فيه داخل المصنع، وكل شيّ محسوب عشان يعطيكم تشطيب قوي وثابت يناسب الشغل المعماري، التجاري، والصناعي.
+            </p>
 
-          <p class="text-sm text-slate-300 lang-en">
-            Every stage is designed for reliable, repeatable results that look clean and perform well in everyday use.
-          </p>
-          <p class="text-sm text-slate-300 lang-ar hidden" dir="rtl">
-            كل خطوة في السالفة محسوبة عدل، عشان تطلع النتيجة نظيفة، ثابتة، وتشيل عنكم همّ التشطيب في الاستخدام اليومي.
-          </p>
+            <p class="text-sm text-slate-300 lang-en">
+              Every stage is designed for reliable, repeatable results that look clean and perform well in everyday use.
+            </p>
+            <p class="text-sm text-slate-300 lang-ar hidden" dir="rtl">
+              كل خطوة في السالفة محسوبة عدل، عشان تطلع النتيجة نظيفة، ثابتة، وتشيل عنكم همّ التشطيب في الاستخدام اليومي.
+            </p>
 
-          <p class="text-sm text-slate-300 lang-en">
-            Each project passes through a controlled metal-washing and surface preparation stage before coating,
-            helping the finish bond better to the steel and stay consistent over time.
-          </p>
-          <p class="text-sm text-slate-300 lang-ar hidden" dir="rtl">
-            كل شغل يمر أولاً على مرحلة غسيل وتحضير سطح تحت تحكّم كامل قبل الطلاء،
-            عشان طبقة البودرة تمسك عدل على الحديد وتبقى ثابتة معكم فترة أطول.
-          </p>
+            <p class="text-sm text-slate-300 lang-en">
+              Each project passes through a controlled metal-washing and surface preparation stage before coating,
+              helping the finish bond better to the steel and stay consistent over time.
+            </p>
+            <p class="text-sm text-slate-300 lang-ar hidden" dir="rtl">
+              كل شغل يمر أولاً على مرحلة غسيل وتحضير سطح تحت تحكّم كامل قبل الطلاء،
+              عشان طبقة البودرة تمسك عدل على الحديد وتبقى ثابتة معكم فترة أطول.
+            </p>
+          </div>
 
           <div class="flex flex-wrap gap-3 pt-1">
             <a href="https://wa.me/971501991974?text=Hello%20HQ%20Coating%2C%20I%20want%20to%20send%20photos%20for%20powder%20coating."
-               class="inline-flex items-center rounded-full bg-hqGreen px-5 py-2.5 text-xs sm:text-sm font-semibold text-white shadow-[0_12px_35px_rgba(0,0,0,0.7)] hover:translate-y-[1px] hover:brightness-110 transition">
+               class="inline-flex items-center rounded-full bg-hqGreen px-5 py-2.5 text-xs sm:text-sm font-semibold text-white shadow-[0_16px_40px_rgba(0,0,0,0.75)] hover:translate-y-[1px] hover:brightness-110 transition">
               <span class="lang-en">Send project photos on WhatsApp</span>
               <span class="lang-ar hidden" dir="rtl">ارسِل لنا صور مشروعك على الواتساب</span>
             </a>
@@ -243,11 +290,11 @@
         </div>
 
         <!-- RIGHT: VIDEO -->
-        <div class="flex justify-center lg:justify-end">
-          <div class="relative">
-            <div class="absolute -inset-[1px] rounded-2xl bg-gradient-to-br from-emerald-500/70 via-hqAccent/60 to-slate-900 opacity-70 blur-[2px]"></div>
+        <div class="flex justify-center lg:justify-end order-2 lg:order-none">
+          <div class="relative w-full max-w-[380px] sm:max-w-[420px] lg:max-w-[400px]">
+            <div class="absolute -inset-[1px] rounded-2xl bg-gradient-to-br from-emerald-500/70 via-hqAccent/60 to-slate-900 opacity-80 blur-[3px]"></div>
 
-            <div class="relative w-[320px] h-[240px] sm:w-[360px] sm:h-[260px] lg:w-[400px] lg:h-[520px] rounded-2xl overflow-hidden border border-hqLine/80 bg-black/50 backdrop-blur-sm shadow-[0_20px_60px_rgba(0,0,0,0.75)]">
+            <div class="relative w-full aspect-[3/4] sm:aspect-[4/5] rounded-2xl overflow-hidden border border-hqLine/80 bg-black/50 backdrop-blur-sm shadow-hqSoft">
               <video
                 src="assets/logo.MP4"
                 autoplay
@@ -271,18 +318,18 @@
 
     <!-- FOCUS / SPECIALISATION -->
     <section id="focus" class="bg-hqPanel/95 border-y border-hqLine">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-10 text-sm">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-10 sm:py-12 text-sm">
         <p class="text-xs tracking-[0.24em] uppercase text-slate-400 mb-2">
           <span class="lang-en">FOCUS</span>
           <span class="lang-ar hidden" dir="rtl">مجال التركيز</span>
         </p>
-        <h2 class="font-heading text-2xl sm:text-3xl font-semibold mb-4">
+        <h2 class="font-heading text-2xl sm:text-3xl font-semibold mb-4 sm:mb-5">
           <span class="lang-en">A production line built entirely around powder-coated metal.</span>
           <span class="lang-ar hidden" dir="rtl">خط إنتاج مخصّص بالكامل لبودرة الطلاء على المعدن، من أوّله لين آخره.</span>
         </h2>
 
-        <div class="grid md:grid-cols-[1.5fr,1fr] gap-6 md:gap-10 items-start">
-          <div class="space-y-3">
+        <div class="grid md:grid-cols-[1.6fr,1fr] gap-6 md:gap-10 items-start">
+          <div class="space-y-3 sm:space-y-4">
             <p class="text-slate-200 lang-en">
               From dedicated metal washing and surface preparation (degreasing, rinsing, and pre-treatment)
               through hanging systems and oven curing, every stage of the line is configured to support one
@@ -315,8 +362,8 @@
             </p>
           </div>
 
-          <div class="flex flex-col gap-2 text-[11px] text-slate-300">
-            <div class="inline-flex items-center justify-between rounded-xl border border-hqLine/70 bg-hqBg/60 px-3 py-2">
+          <div class="flex flex-col gap-3 text-[11px] text-slate-300">
+            <div class="inline-flex items-center justify-between rounded-2xl border border-hqLine/70 bg-hqBg/70 px-3 py-2.5 hover:border-hqAccent/70 transition-colors">
               <span class="uppercase tracking-[0.16em] text-slate-400">
                 <span class="lang-en">Material</span>
                 <span class="lang-ar hidden" dir="rtl">المادة</span>
@@ -327,7 +374,7 @@
               </span>
             </div>
 
-            <div class="inline-flex items-center justify-between rounded-xl border border-hqLine/70 bg-hqBg/60 px-3 py-2">
+            <div class="inline-flex items-center justify-between rounded-2xl border border-hqLine/70 bg-hqBg/70 px-3 py-2.5 hover:border-hqAccent/70 transition-colors">
               <span class="uppercase tracking-[0.16em] text-slate-400">
                 <span class="lang-en">Applications</span>
                 <span class="lang-ar hidden" dir="rtl">مجالات الاستخدام</span>
@@ -338,7 +385,7 @@
               </span>
             </div>
 
-            <div class="inline-flex items-center justify-between rounded-xl border border-hqLine/70 bg-hqBg/60 px-3 py-2">
+            <div class="inline-flex items-center justify-between rounded-2xl border border-hqLine/70 bg-hqBg/70 px-3 py-2.5 hover:border-hqAccent/70 transition-colors">
               <span class="uppercase tracking-[0.16em] text-slate-400">
                 <span class="lang-en">Pre-treatment / washing</span>
                 <span class="lang-ar hidden" dir="rtl">غسيل ومعالجة أولية</span>
@@ -354,78 +401,82 @@
     </section>
 
     <!-- ABOUT FACTORY -->
-    <section id="about" class="bg-hqSoft/90 py-12">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 space-y-7">
+    <section id="about" class="bg-hqSoft/90 py-10 sm:py-12">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 space-y-7 sm:space-y-8">
         <div class="max-w-3xl">
           <p class="text-xs tracking-[0.22em] uppercase text-slate-400 mb-2">
             <span class="lang-en">ABOUT THE FACTORY</span>
             <span class="lang-ar hidden" dir="rtl">عن المنشأة</span>
           </p>
-          <h2 class="font-heading text-2xl sm:text-3xl font-semibold mb-3">
+          <h2 class="font-heading text-2xl sm:text-3xl font-semibold mb-3 sm:mb-4">
             <span class="lang-en">Factory-controlled finishing for metal work.</span>
             <span class="lang-ar hidden" dir="rtl">تشطيب بودرة طلاء تحت تحكّم كامل داخل المصنع.</span>
           </h2>
-          <p class="text-sm sm:text-[15px] text-slate-200 leading-relaxed lang-en">
-            HQ Coating operates from an industrial facility designed to receive fabricated metal components
-            from workshops, contractors, and suppliers. Before any powder is applied, parts pass through
-            a dedicated metal-washing and surface preparation stage, followed by controlled coating and curing.
-          </p>
-          <p class="text-sm sm:text-[15px] text-slate-200 leading-relaxed lang-ar hidden" dir="rtl">
-            إحنا في HQ Coating نشتغل من منشأة صناعية مجهّزة عدل تستقبل القطع المعدنية
-            من الورش، المقاولين، وموردي الحديد. قبل ما نرش البودرة، القطع تمر أولاً على
-            مرحلة غسيل وتحضير سطح مخصّصة، وبعدها يتم الطلاء والمعالجة الحرارية تحت تحكّم كامل.
-          </p>
-          <p class="text-sm sm:text-[15px] text-slate-300 leading-relaxed lang-en">
-            This controlled washing step helps remove oils, contaminants, and residues so the coating bonds
-            consistently to the metal — improving adhesion, appearance, and long-term performance compared to
-            basic manual cleaning.
-          </p>
-          <p class="text-sm sm:text-[15px] text-slate-300 leading-relaxed lang-ar hidden" dir="rtl">
-            مرحلة الغسيل المتحكَّم فيها تضمن إزالة الزيوت والأوساخ وبقايا التصنيع من سطح الحديد،
-            عشان طبقة البودرة تمسك بشكل متساوي وتعطي شكل أنظف وأداء أفضل على المدى الطويل
-            مقارنة بالتنظيف اليدوي العادي.
-          </p>
-          <p class="text-sm sm:text-[15px] text-slate-300 leading-relaxed lang-en">
-            The focus is simple: parts come in after fabrication and leave with a finish that is visually clean,
-            technically sound, and ready to be installed or delivered to the end client.
-          </p>
-          <p class="text-sm sm:text-[15px] text-slate-300 leading-relaxed lang-ar hidden" dir="rtl">
-            الفكرة بسيطة: القطع تدخل بعد التصنيع وتطلع بتشطيب نظيف من ناحية الشكل،
-            سليم من الناحية الفنية، وجاهز للتركيب أو للتسليم للعميل النهائي بدون ما تشيلون همّ التشطيب.
-          </p>
+          <div class="space-y-2.5 sm:space-y-3">
+            <p class="text-sm sm:text-[15px] text-slate-200 leading-relaxed lang-en">
+              HQ Coating operates from an industrial facility designed to receive fabricated metal components
+              from workshops, contractors, and suppliers. Before any powder is applied, parts pass through
+              a dedicated metal-washing and surface preparation stage, followed by controlled coating and curing.
+            </p>
+            <p class="text-sm sm:text-[15px] text-slate-200 leading-relaxed lang-ar hidden" dir="rtl">
+              إحنا في HQ Coating نشتغل من منشأة صناعية مجهّزة عدل تستقبل القطع المعدنية
+              من الورش، المقاولين، وموردي الحديد. قبل ما نرش البودرة، القطع تمر أولاً على
+              مرحلة غسيل وتحضير سطح مخصّصة، وبعدها يتم الطلاء والمعالجة الحرارية تحت تحكّم كامل.
+            </p>
+            <p class="text-sm sm:text-[15px] text-slate-300 leading-relaxed lang-en">
+              This controlled washing step helps remove oils, contaminants, and residues so the coating bonds
+              consistently to the metal — improving adhesion, appearance, and long-term performance compared to
+              basic manual cleaning.
+            </p>
+            <p class="text-sm sm:text-[15px] text-slate-300 leading-relaxed lang-ar hidden" dir="rtl">
+              مرحلة الغسيل المتحكَّم فيها تضمن إزالة الزيوت والأوساخ وبقايا التصنيع من سطح الحديد،
+              عشان طبقة البودرة تمسك بشكل متساوي وتعطي شكل أنظف وأداء أفضل على المدى الطويل
+              مقارنة بالتنظيف اليدوي العادي.
+            </p>
+            <p class="text-sm sm:text-[15px] text-slate-300 leading-relaxed lang-en">
+              The focus is simple: parts come in after fabrication and leave with a finish that is visually clean,
+              technically sound, and ready to be installed or delivered to the end client.
+            </p>
+            <p class="text-sm sm:text-[15px] text-slate-300 leading-relaxed lang-ar hidden" dir="rtl">
+              الفكرة بسيطة: القطع تدخل بعد التصنيع وتطلع بتشطيب نظيف من ناحية الشكل،
+              سليم من الناحية الفنية، وجاهز للتركيب أو للتسليم للعميل النهائي بدون ما تشيلون همّ التشطيب.
+            </p>
+          </div>
         </div>
 
-        <div class="rounded-2xl overflow-hidden border border-hqLine/80 shadow-[0_18px_40px_rgba(0,0,0,0.55)] bg-hqBg/60">
+        <div class="rounded-2xl overflow-hidden border border-hqLine/80 shadow-hqSoft bg-hqBg/60">
           <img
             src="assets/gate-after-white.jpeg"
             alt="Example of metal gate after powder coating"
-            class="w-full h-72 md:h-80 object-cover" />
+            class="w-full h-64 sm:h-72 md:h-80 object-cover transition-transform duration-500 hover:scale-[1.03]" />
         </div>
       </div>
     </section>
 
     <!-- WHERE WE FIT / ROLE -->
-    <section id="role" class="bg-hqBg/95 py-12 border-y border-hqLine">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6">
-        <p class="text-xs tracking-[0.22em] uppercase text-slate-400 mb-2">
-          <span class="lang-en">WHERE WE FIT</span>
-          <span class="lang-ar hidden" dir="rtl">وين ندخل في دورة الشغل</span>
-        </p>
-        <h2 class="font-heading text-2xl sm:text-3xl font-semibold mb-2">
-          <span class="lang-en">How HQ Coating connects to your project workflow.</span>
-          <span class="lang-ar hidden" dir="rtl">كيف HQ Coating يدخل بشكل طبيعي في دورة مشروعك ويخفّف عنك سالفة التشطيب.</span>
-        </h2>
-        <p class="text-sm text-slate-300 mb-6 lang-en">
-          HQ Coating sits between fabrication and installation—supporting metal work used in
-          façades, structural details, external elements, and interior features.
-        </p>
-        <p class="text-sm text-slate-300 mb-6 lang-ar hidden" dir="rtl">
-          HQ Coating يكون بالنص بين مرحلة تصنيع المعدن ومرحلة التركيب، ويدعم الأعمال المعدنية
-          المستخدمة في الواجهات، التفاصيل الإنشائية، العناصر الخارجية، والتشطيبات الداخلية.
-        </p>
+    <section id="role" class="bg-hqBg/95 py-10 sm:py-12 border-y border-hqLine">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 space-y-6">
+        <div>
+          <p class="text-xs tracking-[0.22em] uppercase text-slate-400 mb-2">
+            <span class="lang-en">WHERE WE FIT</span>
+            <span class="lang-ar hidden" dir="rtl">وين ندخل في دورة الشغل</span>
+          </p>
+          <h2 class="font-heading text-2xl sm:text-3xl font-semibold mb-2 sm:mb-3">
+            <span class="lang-en">How HQ Coating connects to your project workflow.</span>
+            <span class="lang-ar hidden" dir="rtl">كيف HQ Coating يدخل بشكل طبيعي في دورة مشروعك ويخفّف عنك سالفة التشطيب.</span>
+          </h2>
+          <p class="text-sm text-slate-300 max-w-3xl lang-en">
+            HQ Coating sits between fabrication and installation—supporting metal work used in
+            façades, structural details, external elements, and interior features.
+          </p>
+          <p class="text-sm text-slate-300 max-w-3xl lang-ar hidden" dir="rtl">
+            HQ Coating يكون بالنص بين مرحلة تصنيع المعدن ومرحلة التركيب، ويدعم الأعمال المعدنية
+            المستخدمة في الواجهات، التفاصيل الإنشائية، العناصر الخارجية، والتشطيبات الداخلية.
+          </p>
+        </div>
 
-        <div class="grid md:grid-cols-3 gap-6 text-sm">
-          <div class="bg-hqPanel/90 rounded-2xl border border-hqLine/70 p-4">
+        <div class="grid md:grid-cols-3 gap-4 sm:gap-6 text-sm">
+          <div class="bg-hqPanel/90 rounded-2xl border border-hqLine/70 p-4 sm:p-5 hover:border-hqAccent/80 hover:-translate-y-1 transition-all shadow-[0_10px_30px_rgba(0,0,0,0.6)]/10">
             <p class="text-xs uppercase tracking-[0.18em] text-slate-400 mb-2">
               <span class="lang-en">For fabricators</span>
               <span class="lang-ar hidden" dir="rtl">للمصنّعين</span>
@@ -437,7 +488,7 @@
               ترسل الشغل المعدني بعد تصنيعه للتشطيب عندنا، وتريح نفسك من تشغيل خط طلاء كامل داخل الورشة.
             </p>
           </div>
-          <div class="bg-hqPanel/90 rounded-2xl border border-hqLine/70 p-4">
+          <div class="bg-hqPanel/90 rounded-2xl border border-hqLine/70 p-4 sm:p-5 hover:border-hqAccent/80 hover:-translate-y-1 transition-all shadow-[0_10px_30px_rgba(0,0,0,0.6)]/10">
             <p class="text-xs uppercase tracking-[0.18em] text-slate-400 mb-2">
               <span class="lang-en">For contractors</span>
               <span class="lang-ar hidden" dir="rtl">للمقاولين</span>
@@ -449,7 +500,7 @@
               تستخدم المصنع كشريك في مرحلة التشطيب، وبتوصل العناصر المعدنية للموقع جاهزة تركيب.
             </p>
           </div>
-          <div class="bg-hqPanel/90 rounded-2xl border border-hqLine/70 p-4">
+          <div class="bg-hqPanel/90 rounded-2xl border border-hqLine/70 p-4 sm:p-5 hover:border-hqAccent/80 hover:-translate-y-1 transition-all shadow-[0_10px_30px_rgba(0,0,0,0.6)]/10">
             <p class="text-xs uppercase tracking-[0.18em] text-slate-400 mb-2">
               <span class="lang-en">For designers & owners</span>
               <span class="lang-ar hidden" dir="rtl">للاستشاريين ومالكي المشاريع</span>
@@ -467,8 +518,8 @@
     </section>
 
     <!-- PROJECTS -->
-    <section id="projects" class="bg-hqSoft/95 py-12">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 space-y-6">
+    <section id="projects" class="bg-hqSoft/95 py-10 sm:py-12">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 space-y-6 sm:space-y-7">
         <div>
           <p class="text-xs tracking-[0.22em] uppercase text-slate-400 mb-2">
             <span class="lang-en">PROJECT SNAPSHOTS</span>
@@ -489,25 +540,30 @@
         </div>
 
         <!-- Slider -->
-        <div class="flex gap-4 overflow-x-auto pb-2 snap-x snap-mandatory">
-          <figure class="min-w-[260px] h-48 rounded-2xl overflow-hidden border border-hqLine/80 bg-hqBg/60 snap-start">
-            <img src="assets/images/factory_1_web.jpg" class="w-full h-full object-cover" alt="Factory view 1" />
-          </figure>
-          <figure class="min-w-[260px] h-48 rounded-2xl overflow-hidden border border-hqLine/80 bg-hqBg/60 snap-start">
-            <img src="assets/playground-green.jpeg" class="w-full h-full object-cover" alt="Coated structure" />
-          </figure>
-          <figure class="min-w-[260px] h-48 rounded-2xl overflow-hidden border border-hqLine/80 bg-hqBg/60 snap-start">
-            <img src="assets/images/factory_3_web.jpg" class="w-full h-full object-cover" alt="Factory view 2" />
-          </figure>
-          <figure class="min-w-[260px] h-48 rounded-2xl overflow-hidden border border-hqLine/80 bg-hqBg/60 snap-start">
-            <img src="assets/gate-after-white.jpeg" class="w-full h-full object-cover" alt="Finished metal work" />
-          </figure>
+        <div class="relative">
+          <div class="pointer-events-none absolute left-0 top-0 h-full w-8 bg-gradient-to-r from-hqSoft/95 via-hqSoft/40 to-transparent z-10"></div>
+          <div class="pointer-events-none absolute right-0 top-0 h-full w-8 bg-gradient-to-l from-hqSoft/95 via-hqSoft/40 to-transparent z-10"></div>
+
+          <div class="flex gap-4 overflow-x-auto pb-3 snap-x snap-mandatory scroll-smooth">
+            <figure class="min-w-[70%] sm:min-w-[280px] h-48 sm:h-52 rounded-2xl overflow-hidden border border-hqLine/80 bg-hqBg/60 snap-start shadow-[0_12px_35px_rgba(0,0,0,0.6)]">
+              <img src="assets/images/factory_1_web.jpg" class="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.05]" alt="Factory view 1" />
+            </figure>
+            <figure class="min-w-[70%] sm:min-w-[280px] h-48 sm:h-52 rounded-2xl overflow-hidden border border-hqLine/80 bg-hqBg/60 snap-start shadow-[0_12px_35px_rgba(0,0,0,0.6)]">
+              <img src="assets/playground-green.jpeg" class="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.05]" alt="Coated structure" />
+            </figure>
+            <figure class="min-w-[70%] sm:min-w-[280px] h-48 sm:h-52 rounded-2xl overflow-hidden border border-hqLine/80 bg-hqBg/60 snap-start shadow-[0_12px_35px_rgba(0,0,0,0.6)]">
+              <img src="assets/images/factory_3_web.jpg" class="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.05]" alt="Factory view 2" />
+            </figure>
+            <figure class="min-w-[70%] sm:min-w-[280px] h-48 sm:h-52 rounded-2xl overflow-hidden border border-hqLine/80 bg-hqBg/60 snap-start shadow-[0_12px_35px_rgba(0,0,0,0.6)]">
+              <img src="assets/gate-after-white.jpeg" class="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.05]" alt="Finished metal work" />
+            </figure>
+          </div>
         </div>
 
         <!-- before / after -->
-        <div class="grid md:grid-cols-2 gap-6 text-sm">
-          <div class="bg-hqPanel/95 rounded-2xl border border-hqLine overflow-hidden">
-            <div class="relative h-52">
+        <div class="grid md:grid-cols-2 gap-5 md:gap-6 text-sm">
+          <div class="bg-hqPanel/95 rounded-2xl border border-hqLine overflow-hidden shadow-[0_16px_40px_rgba(0,0,0,0.65)]">
+            <div class="relative h-52 sm:h-56">
               <img src="assets/gate-before.jpeg" class="w-full h-full object-cover" alt="Metal work before coating" />
               <span class="absolute top-3 left-3 bg-red-600/90 text-xs font-semibold rounded-full px-3 py-1">
                 BEFORE · RAW STEEL
@@ -520,8 +576,8 @@
               قطعة معدنية بعد اللحام والصنفرة الأولية، بدون أي طبقة حماية أو تشطيب نهائي — شغل خام.
             </div>
           </div>
-          <div class="bg-hqPanel/95 rounded-2xl border border-hqLine overflow-hidden">
-            <div class="relative h-52">
+          <div class="bg-hqPanel/95 rounded-2xl border border-hqLine overflow-hidden shadow-[0_16px_40px_rgba(0,0,0,0.65)]">
+            <div class="relative h-52 sm:h-56">
               <img src="assets/gate-after-white.jpeg" class="w-full h-full object-cover" alt="Metal work after coating" />
               <span class="absolute top-3 left-3 bg-emerald-600/90 text-xs font-semibold rounded-full px-3 py-1">
                 AFTER · COATED & CURED
@@ -540,7 +596,7 @@
     </section>
 
     <!-- PROCESS -->
-    <section id="process" class="bg-hqBg/95 py-12 border-y border-hqLine">
+    <section id="process" class="bg-hqBg/95 py-10 sm:py-12 border-y border-hqLine">
       <div class="max-w-6xl mx-auto px-4 sm:px-6">
         <p class="text-xs tracking-[0.22em] uppercase text-slate-400 mb-2">
           <span class="lang-en">PROCESS</span>
@@ -551,11 +607,11 @@
           <span class="lang-ar hidden" dir="rtl">من أول صور توضيحية لين قطع معدنية جاهزة للمشروع.</span>
         </h2>
 
-        <div class="space-y-6 text-sm mt-4">
-          <div class="flex gap-4">
-            <div class="text-3xl font-bold text-hqAccent leading-none shrink-0">01</div>
-            <div>
-              <h3 class="font-semibold mb-1">
+        <div class="space-y-5 sm:space-y-6 text-sm mt-4">
+          <div class="flex gap-3 sm:gap-4">
+            <div class="text-2xl sm:text-3xl font-bold text-hqAccent leading-none shrink-0 mt-0.5">01</div>
+            <div class="space-y-1.5">
+              <h3 class="font-semibold">
                 <span class="lang-en">Share photos & key information</span>
                 <span class="lang-ar hidden" dir="rtl">إرسال الصور والمعلومات الأساسية</span>
               </h3>
@@ -569,10 +625,10 @@
               </p>
             </div>
           </div>
-          <div class="flex gap-4">
-            <div class="text-3xl font-bold text-hqAccent leading-none shrink-0">02</div>
-            <div>
-              <h3 class="font-semibold mb-1">
+          <div class="flex gap-3 sm:gap-4">
+            <div class="text-2xl sm:text-3xl font-bold text-hqAccent leading-none shrink-0 mt-0.5">02</div>
+            <div class="space-y-1.5">
+              <h3 class="font-semibold">
                 <span class="lang-en">Align on finish & lead time</span>
                 <span class="lang-ar hidden" dir="rtl">الاتفاق على نوع التشطيب ومدة التنفيذ</span>
               </h3>
@@ -585,10 +641,10 @@
               </p>
             </div>
           </div>
-          <div class="flex gap-4">
-            <div class="text-3xl font-bold text-hqAccent leading-none shrink-0">03</div>
-            <div>
-              <h3 class="font-semibold mb-1">
+          <div class="flex gap-3 sm:gap-4">
+            <div class="text-2xl sm:text-3xl font-bold text-hqAccent leading-none shrink-0 mt-0.5">03</div>
+            <div class="space-y-1.5">
+              <h3 class="font-semibold">
                 <span class="lang-en">Deliver metal work to the factory</span>
                 <span class="lang-ar hidden" dir="rtl">تسليم القطع المعدنية للمصنع</span>
               </h3>
@@ -602,10 +658,10 @@
               </p>
             </div>
           </div>
-          <div class="flex gap-4">
-            <div class="text-3xl font-bold text-hqAccent leading-none shrink-0">04</div>
-            <div>
-              <h3 class="font-semibold mb-1">
+          <div class="flex gap-3 sm:gap-4">
+            <div class="text-2xl sm:text-3xl font-bold text-hqAccent leading-none shrink-0 mt-0.5">04</div>
+            <div class="space-y-1.5">
+              <h3 class="font-semibold">
                 <span class="lang-en">Collect finished, project-ready parts</span>
                 <span class="lang-ar hidden" dir="rtl">استلام قطع جاهزة للدخول في المشروع</span>
               </h3>
@@ -623,8 +679,8 @@
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" class="bg-hqSoft/95 py-12">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 space-y-7">
+    <section id="contact" class="bg-hqSoft/95 py-10 sm:py-12">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 space-y-7 sm:space-y-8">
         <div class="max-w-3xl">
           <p class="text-xs tracking-[0.22em] uppercase text-slate-400 mb-2">
             <span class="lang-en">CONTACT</span>
@@ -644,60 +700,9 @@
           </p>
         </div>
 
-        <div class="grid lg:grid-cols-[1.1fr,1.2fr] gap-8 items-start">
-          <div class="space-y-4 text-sm">
-            <!-- WhatsApp numbers -->
-            <div>
-              <p class="text-[11px] text-slate-400 uppercase tracking-[0.2em] mb-1">WhatsApp</p>
-
-              <a href="https://wa.me/971501991974"
-                 class="block text-sm font-semibold text-hqAccent hover:text-amber-300">
-                0501991974
-              </a>
-              <a href="https://wa.me/971501992414"
-                 class="block text-sm font-semibold text-hqAccent hover:text-amber-300">
-                0501992414
-              </a>
-              <a href="https://wa.me/971525806496"
-                 class="block text-sm font-semibold text-hqAccent hover:text-amber-300">
-                0525806496
-              </a>
-
-              <p class="text-xs text-slate-400 mt-1 lang-en">
-                Send project photos, a brief description, and any timing constraints — we’ll respond with next steps.
-              </p>
-              <p class="text-xs text-slate-400 mt-1 lang-ar hidden" dir="rtl">
-                ارسِل صور المشروع، وصف بسيط، وأي مواعيد مهمة — ونرجع لك بالخطوات التالية.
-              </p>
-            </div>
-
-            <!-- Email -->
-            <div>
-              <p class="text-[11px] text-slate-400 uppercase tracking-[0.2em] mb-1">Email</p>
-              <a href="mailto:Hqm.coating@gmail.com"
-                 class="text-sm text-slate-100 hover:text-hqAccent">
-                Hqm.coating@gmail.com
-              </a>
-            </div>
-
-            <!-- Location (optional placeholder commented)
-            <div>
-              <p class="text-[11px] text-slate-400 uppercase tracking-[0.2em] mb-1">
-                <span class="lang-en">Factory location</span>
-                <span class="lang-ar hidden" dir="rtl">عنوان المصنع</span>
-              </p>
-              <p class="text-sm text-slate-300 lang-en">
-                (Add your factory address here – industrial area / city / country)
-              </p>
-              <p class="text-sm text-slate-300 lang-ar hidden" dir="rtl">
-                (اكتب هنا عنوان المصنع – المنطقة الصناعية / المدينة / الدولة)
-              </p>
-            </div>
-            -->
-          </div>
-
-          <!-- FORM -->
-          <form class="bg-hqPanel/95 rounded-2xl border border-hqLine p-5 space-y-3 text-sm">
+        <div class="grid lg:grid-cols-[1.15fr,1.25fr] gap-6 lg:gap-8 items-start">
+          <!-- FORM أول على الموبايل -->
+          <form class="order-2 lg:order-1 bg-hqPanel/95 rounded-2xl border border-hqLine p-4 sm:p-5 space-y-3 text-sm shadow-hqSoft">
             <div class="grid md:grid-cols-2 gap-3">
               <div>
                 <label class="block text-xs font-medium text-slate-300 mb-1">
@@ -743,23 +748,138 @@
               <span class="lang-ar hidden" dir="rtl">إرسال الطلب</span>
             </button>
           </form>
+
+          <!-- CONTACT DETAILS -->
+          <div class="order-1 lg:order-2 space-y-4 text-sm">
+            <!-- WhatsApp numbers -->
+            <div class="bg-hqPanel/90 rounded-2xl border border-hqLine p-4 sm:p-5 shadow-[0_12px_35px_rgba(0,0,0,0.6)]/40">
+              <p class="text-[11px] text-slate-400 uppercase tracking-[0.2em] mb-1">WhatsApp</p>
+
+              <a href="https://wa.me/971501991974"
+                 class="block text-sm font-semibold text-hqAccent hover:text-amber-300">
+                0501991974
+              </a>
+              <a href="https://wa.me/971501992414"
+                 class="block text-sm font-semibold text-hqAccent hover:text-amber-300">
+                0501992414
+              </a>
+              <a href="https://wa.me/971525806496"
+                 class="block text-sm font-semibold text-hqAccent hover:text-amber-300">
+                0525806496
+              </a>
+
+              <p class="text-xs text-slate-400 mt-2 lang-en">
+                Send project photos, a brief description, and any timing constraints — we’ll respond with next steps.
+              </p>
+              <p class="text-xs text-slate-400 mt-2 lang-ar hidden" dir="rtl">
+                ارسِل صور المشروع، وصف بسيط، وأي مواعيد مهمة — ونرجع لك بالخطوات التالية.
+              </p>
+            </div>
+
+            <!-- Email -->
+            <div class="bg-hqPanel/90 rounded-2xl border border-hqLine p-4 sm:p-5">
+              <p class="text-[11px] text-slate-400 uppercase tracking-[0.2em] mb-1">Email</p>
+              <a href="mailto:Hqm.coating@gmail.com"
+                 class="text-sm text-slate-100 hover:text-hqAccent break-all">
+                Hqm.coating@gmail.com
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- MAP BLOCK -->
+        <div class="mt-4 sm:mt-6 relative">
+          <div class="absolute -inset-[1px] rounded-2xl bg-gradient-to-r from-hqGreen/60 via-hqAccent/60 to-slate-900 opacity-70 blur-[3px] pointer-events-none"></div>
+
+          <div class="relative rounded-2xl border border-hqLine/80 bg-hqBg/80 overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.75)]">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between px-4 sm:px-5 py-3 sm:py-4 border-b border-hqLine/60 gap-3">
+              <div>
+                <p class="text-[11px] uppercase tracking-[0.22em] text-slate-400">
+                  <span class="lang-en">FACTORY LOCATION</span>
+                  <span class="lang-ar hidden" dir="rtl">عنوان المصنع</span>
+                </p>
+
+                <p class="text-xs text-slate-200 mt-1 lang-en">
+                  79VX+JRV – 15th Street, Al Qusais Industrial Area 4 – Dubai, UAE
+                </p>
+                <p class="text-xs text-slate-200 mt-1 lang-ar hidden" dir="rtl">
+                  79VX+JRV - شارع ١٥ - القصيص منطقة صناعية ٤ - دبي، الإمارات العربية المتحدة
+                </p>
+
+                <p class="text-xs text-slate-400 mt-1 lang-en">
+                  View HQ Coating on Google Maps and plan your delivery route.
+                </p>
+                <p class="text-xs text-slate-400 mt-1 lang-ar hidden" dir="rtl">
+                  شوف موقع HQ Coating على خرائط جوجل ورتّب مسار التوصيل للمصنع.
+                </p>
+              </div>
+
+              <a href="https://www.google.com/maps/search/?api=1&query=High%20Quality%20Minerals%20Powder%20Coating%20Dubai"
+                 target="_blank"
+                 rel="noopener"
+                 class="inline-flex items-center self-start sm:self-auto rounded-full border border-hqAccent/80 px-3 py-1.5 text-[11px] font-semibold text-hqAccent hover:bg-hqAccent hover:text-hqBg transition">
+                <span class="lang-en">Open in Google Maps</span>
+                <span class="lang-ar hidden" dir="rtl">فتح في خرائط جوجل</span>
+              </a>
+            </div>
+
+            <div class="h-64 sm:h-72 md:h-80 w-full">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.3000457116987!2d55.40213632406774!3d25.294121327767094!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5d724a1d17f3%3A0xe8aec94ee5b21c98!2sHigh%20Quality%20Minerals%20Powder%20Coating!5e0!3m2!1sar!2sae!4v1763461655948!5m2!1sar!2sae"
+                class="w-full h-full"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- FOOTER -->
-    <footer class="bg-hqBg/95 border-t border-hqLine py-4">
+    <footer class="bg-hqBg/95 border-t border-hqLine py-4 pb-16 md:pb-4">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center justify-between gap-2 text-[11px] text-slate-500">
         <p>
           © <span id="year"></span> HQ Coating – Powder Coating Factory for Metal.
         </p>
-        <p>
+        <p class="text-center md:text-right">
           <span class="lang-en">Factory-controlled powder-coated finishes for architectural, commercial, and industrial metal work.</span>
           <span class="lang-ar hidden" dir="rtl">تشطيبات بودرة طلاء تحت تحكّم كامل داخل المصنع للأعمال المعدنية المعمارية، التجارية، والصناعية.</span>
         </p>
       </div>
     </footer>
+
+    <!-- Floating WhatsApp (Mobile) -->
+    <a href="https://wa.me/971501991974?text=Hello%20HQ%20Coating%2C%20I%20want%20to%20send%20photos%20for%20powder%20coating."
+       class="md:hidden fixed bottom-4 left-4 right-4 z-40">
+      <div class="mx-auto max-w-sm rounded-full bg-hqGreen px-4 py-2.5 flex items-center justify-center gap-2 shadow-[0_16px_40px_rgba(0,0,0,0.85)] active:scale-[0.98] transition">
+        <span class="inline-block h-2 w-2 rounded-full bg-emerald-300"></span>
+        <span class="text-[12px] font-semibold text-white lang-en">
+          Send photos on WhatsApp
+        </span>
+        <span class="text-[12px] font-semibold text-white lang-ar hidden" dir="rtl">
+          ارسِل صورك على الواتساب
+        </span>
+      </div>
+    </a>
   </main>
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/971501991974?text=Hello%20HQ%20Coating%2C%20I%20want%20to%20send%20photos%20for%20powder%20coating."
+     class="floating-wa"
+     aria-label="Chat on WhatsApp">
+    <!-- دائرة النبض -->
+    <div class="floating-wa-ring absolute inset-0 rounded-full bg-emerald-400/40 blur-sm"></div>
+
+    <!-- الزر نفسه -->
+    <div class="relative floating-wa-btn h-14 w-14 md:h-16 md:w-16 rounded-full bg-hqGreen shadow-[0_18px_45px_rgba(0,0,0,0.85)] flex items-center justify-center border border-emerald-300/60">
+      <!-- أيقونة واتساب SVG -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-7 w-7 fill-white">
+        <path d="M16 3C9.935 3 5 7.935 5 14c0 2.077.555 3.999 1.52 5.673L5 27l7.51-1.471A10.86 10.86 0 0 0 16 25c6.065 0 11-4.935 11-11S22.065 3 16 3zm0 2c4.973 0 9 4.028 9 9 0 4.973-4.027 9-9 9-1.64 0-3.173-.45-4.497-1.233l-.321-.187-4.457.872.85-4.34-.209-.354A8.94 8.94 0 0 1 7 14c0-4.972 4.028-9 9-9zm4.41 10.524c-.24-.12-1.417-.699-1.637-.779-.22-.08-.38-.12-.54.12s-.62.779-.76.94-.28.18-.52.06-1.01-.373-1.926-1.19c-.712-.635-1.193-1.42-1.333-1.66-.14-.24-.015-.37.105-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.48-.4-.41-.54-.42l-.46-.01c-.16 0-.42.06-.64.28s-.84.82-.84 2.02.86 2.34.98 2.5c.12.16 1.7 2.59 4.12 3.63.58.25 1.03.4 1.38.51.58.18 1.1.155 1.515.094.462-.069 1.417-.579 1.616-1.139.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28z"/>
+      </svg>
+    </div>
+  </a>
 
   <script>
     const menuBtn = document.getElementById('menuBtn');
@@ -767,7 +887,7 @@
     if (menuBtn && mobileMenu) {
       menuBtn.addEventListener('click', () => {
         const open = mobileMenu.style.maxHeight && mobileMenu.style.maxHeight !== '0px';
-        mobileMenu.style.maxHeight = open ? '0px' : '280px';
+        mobileMenu.style.maxHeight = open ? '0px' : '320px';
       });
     }
 
