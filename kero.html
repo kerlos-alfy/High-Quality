@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+  <!-- SEO -->
+  <title>High Quality Powder Coating Factory | Powder Coating Factory in Dubai</title>
+  <meta name="description"
+        content="High Quality Powder Coating Factory is a specialized powder coating factory in Al Qusais Industrial Area 4 – Dubai, UAE. Full metal pre-treatment line, oven curing and architectural-grade finishes for villas, warehouses and industrial projects across the UAE." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="High Quality Powder Coating Factory – Premium Powder Coating in Dubai" />
+  <meta property="og:description"
+        content="Architectural, industrial and decorative metal finishes with full pre-treatment washing line and controlled oven curing in Al Qusais Industrial Area 4 – Dubai, UAE." />
+  <!-- استخدمنا صورة موجودة فعلاً عندك -->
+  <meta property="og:image" content="assets/gate-after-white.jpeg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://example.com/" />
+
+  <link rel="icon" href="assets/Hq-logo.svg" type="image/svg+xml" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', '"Inter"', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              bg: '#0A0A0A',
+              panel: '#111827',
+              gold: '#D4AF37',
+              gray: '#E5E7EB',
+              muted: '#9CA3AF',
+            }
+          },
+          boxShadow: {
+            soft: '0 20px 60px rgba(0,0,0,0.55)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background: radial-gradient(circle at top, #1F2933 0, #0A0A0A 45%, #050505 100%);
+      color: #E5E7EB;
+      font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+      overflow-x: hidden;
+    }
+
+    .glass-panel {
+      background: linear-gradient(135deg, rgba(15,23,42,0.9), rgba(15,23,42,0.7));
+      border: 1px solid rgba(249,250,251,0.06);
+      backdrop-filter: blur(18px);
+    }
+
+    .hover-card {
+      transition: all 0.25s ease;
+    }
+    .hover-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.65);
+      border-color: rgba(212,175,55,0.75);
+    }
+
+    .section-title {
+      position: relative;
+      display: inline-block;
+      padding-bottom: 0.35rem;
+    }
+    .section-title::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 46%;
+      height: 3px;
+      background: linear-gradient(to right, #D4AF37, rgba(212,175,55,0));
+      border-radius: 999px;
+    }
+
+    .bg-blob {
+      position: absolute;
+      border-radius: 999px;
+      filter: blur(45px);
+      opacity: 0.3;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .fade-section {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    .fade-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+  </style>
+</head>
+<body class="antialiased">
+
+  <!-- Decorative blobs -->
+  <div class="bg-blob w-80 h-80 bg-brand-gold/20 -top-8 -left-10"></div>
+  <div class="bg-blob w-96 h-96 bg-brand-gold/10 top-1/3 -right-16"></div>
+  <div class="bg-blob w-72 h-72 bg-slate-500/20 bottom-0 left-1/3"></div>
+
+  <!-- HEADER / NAV -->
+  <header class="fixed top-0 inset-x-0 z-40 border-b border-white/10 bg-black/75 backdrop-blur-xl">
+    <div class="max-w-7xl mx-auto px-4 md:px-8 py-3 flex items-center justify-between gap-4">
+      <!-- Logo + Brand -->
+      <div class="flex items-center gap-3">
+        <div class="w-11 h-11 rounded-full bg-gradient-to-br from-brand-gold via-yellow-200 to-brand-gold flex items-center justify-center shadow-soft">
+          <span class="text-xs font-extrabold tracking-[0.18em] text-black">HQ</span>
+        </div>
+        <div class="leading-tight">
+          <p class="text-[10px] uppercase tracking-[0.22em] text-brand-gold/90">High Quality Powder Coating Factory</p>
+          <p class="text-[10px] uppercase tracking-[0.22em] text-brand-muted">
+            Al Qusais Industrial Area 4 – Dubai, UAE
+          </p>
+        </div>
+      </div>
+
+      <!-- Desktop nav -->
+      <nav class="hidden md:flex items-center gap-5 text-xs font-medium text-brand-gray/80">
+        <a href="#about" class="hover:text-white transition">About</a>
+        <a href="#why" class="hover:text-white transition">Why Us</a>
+        <a href="#services" class="hover:text-white transition">Services</a>
+        <a href="#colours" class="hover:text-white transition">Colours & Finishes</a>
+        <a href="#workflow" class="hover:text-white transition">Workflow</a>
+        <a href="#gallery" class="hover:text-white transition">Gallery</a>
+        <a href="#contact" class="hover:text-white transition">Contact</a>
+      </nav>
+
+      <!-- Actions -->
+      <div class="flex items-center gap-2">
+        <a href="#contact"
+           class="hidden sm:inline-flex items-center text-[11px] font-semibold uppercase tracking-[0.16em] border border-brand-gold/60 text-brand-gold px-4 py-2 rounded-full hover:bg-brand-gold hover:text-black transition">
+          Request a Quote
+        </a>
+        <a href="https://wa.me/971501992414?text=Hello,%20I%20am%20contacting%20you%20from%20the%20website.%20I%20would%20like%20to%20know%20more%20about%20your%20powder%20coating%20services%20and%20speak%20with%20someone%20from%20the%20team."
+           class="inline-flex sm:hidden items-center text-[11px] font-semibold uppercase tracking-[0.16em] bg-brand-gold text-black px-4 py-2 rounded-full shadow-soft">
+          WhatsApp
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section id="hero" class="relative min-h-[92vh] flex items-center pt-24 pb-16">
+    <!-- Background image من صورك الموجودة -->
+    <div class="absolute inset-0">
+      <div class="w-full h-full bg-[url('assets/images/factory_3_web.jpg')] bg-cover bg-center"></div>
+      <div class="absolute inset-0 bg-black/80"></div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 md:px-8 grid lg:grid-cols-2 gap-10 items-center">
+      <!-- Text -->
+      <div class="space-y-8 fade-section">
+        <div class="inline-flex items-center gap-2 rounded-full bg-white/5 border border-white/10 px-4 py-1.5 text-[11px] uppercase tracking-[0.18em] text-brand-gray">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+          Premium Factory · Powder Coating · Dubai
+        </div>
+
+        <div>
+          <h1 class="text-4xl md:text-5xl xl:text-6xl font-extrabold leading-tight text-white">
+            Premium Powder Coating Factory in
+            <span class="text-brand-gold">Dubai</span>
+          </h1>
+          <p class="mt-4 text-sm md:text-base text-brand-gray max-w-xl">
+            Architectural, industrial and decorative metal finishes – built with precision, full pre-treatment washing
+            line, chemical treatment and controlled oven curing for long-term durability on site.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap gap-3">
+          <a href="#contact"
+             class="inline-flex items-center justify-center px-7 py-3 rounded-full text-sm font-semibold bg-gradient-to-r from-brand-gold to-yellow-300 text-black shadow-soft hover:brightness-110 transition">
+            Request a Quote
+          </a>
+          <a href="https://wa.me/971501992414?text=Hello,%20I%20am%20contacting%20you%20from%20the%20website.%20I%20would%20like%20to%20know%20more%20about%20your%20powder%20coating%20services%20and%20speak%20with%20someone%20from%20the%20team."
+             class="inline-flex items-center justify-center px-6 py-3 rounded-full text-sm font-semibold border border-brand-gold/70 text-brand-gold hover:bg-brand-gold hover:text-black transition">
+            Contact on WhatsApp
+          </a>
+        </div>
+
+        <!-- Quick stats -->
+        <div class="grid grid-cols-3 gap-4 pt-4 border-t border-white/10 max-w-md text-xs">
+          <div>
+            <p class="uppercase tracking-[0.16em] text-brand-muted">Experience</p>
+            <p class="mt-1 text-lg font-bold text-brand-gold">10+ yrs</p>
+          </div>
+          <div>
+            <p class="uppercase tracking-[0.16em] text-brand-muted">Line Length</p>
+            <p class="mt-1 text-lg font-bold text-brand-gold">Up to 7 m</p>
+          </div>
+          <div>
+            <p class="uppercase tracking-[0.16em] text-brand-muted">Projects</p>
+            <p class="mt-1 text-lg font-bold text-brand-gold">250+ done</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero panel بصورة من عندك -->
+      <div class="glass-panel rounded-3xl shadow-soft border border-white/10 p-6 md:p-7 fade-section">
+        <p class="text-xs uppercase tracking-[0.18em] text-brand-muted mb-3">Factory snapshot</p>
+       <div class="aspect-[4/3] rounded-2xl overflow-hidden border border-white/10 mb-5">
+  <video
+    autoplay
+    muted
+    loop
+    playsinline
+    class="w-full h-full object-cover">
+    <source src="logo1.MP4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+        <ul class="space-y-2 text-sm text-brand-gray">
+          <li>• Full metal pre-treatment washing line (multi-stage chemical process).</li>
+          <li>• Controlled industrial oven curing with monitored temperature profile.</li>
+          <li>• Architectural-grade powder systems (RAL, texture, metallics).</li>
+          <li>• Dedicated factory in Al Qusais Industrial Area 4 – Dubai.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about" class="py-16 md:py-20 border-t border-white/10 bg-black/60">
+    <div class="max-w-7xl mx-auto px-4 md:px-8 grid lg:grid-cols-[1.4fr,1fr] gap-10 items-start fade-section">
+      <div>
+        <h2 class="section-title text-2xl md:text-3xl font-bold text-white mb-4">
+          About High Quality Powder Coating Factory
+        </h2>
+        <p class="text-sm md:text-base text-brand-gray leading-relaxed mb-4">
+          High Quality Powder Coating Factory is a dedicated powder coating facility in
+          <strong>Al Qusais Industrial Area 4 – Dubai, UAE</strong>.
+          Our mission is to provide consistent, durable and visually refined finishes
+          for architectural, industrial and decorative metalwork across the UAE.
+        </p>
+        <p class="text-sm md:text-base text-brand-gray leading-relaxed mb-4">
+          The factory is built around a full pre-treatment washing line that removes oil, grease and contaminants,
+          followed by chemical treatment to activate and protect the steel or aluminium surface. This ensures that the
+          powder coating bonds strongly and performs reliably in harsh outdoor conditions.
+        </p>
+        <p class="text-sm md:text-base text-brand-gray leading-relaxed">
+          After powder application, all components pass through
+          <strong>controlled industrial ovens</strong> with temperature profiles set according to the powder
+          manufacturer’s technical data sheets. Combined with regular quality checks on thickness, adhesion and visual
+          appearance, this process gives long-term durability for villas, warehouses, industrial facilities and
+          decorative installations.
+        </p>
+      </div>
+
+      <div class="space-y-4">
+        <div class="glass-panel rounded-2xl p-5">
+          <p class="text-xs uppercase tracking-[0.18em] text-brand-muted mb-2">Core focus</p>
+          <p class="text-sm text-brand-gray">
+            • Architectural facades, gates & railings<br />
+            • Industrial steel, structures & equipment<br />
+            • Interior decorative and feature metalwork
+          </p>
+        </div>
+        <div class="glass-panel rounded-2xl p-5">
+          <p class="text-xs uppercase tracking-[0.18em] text-brand-muted mb-2">Quality assurance</p>
+          <p class="text-sm text-brand-gray">
+            • Pre-treatment and process control<br />
+            • Oven temperature and curing checks<br />
+            • Film thickness and visual inspection<br />
+            • Documentation for consultants and clients
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section id="why" class="py-16 md:py-20 bg-brand-panel/80 border-t border-white/10 fade-section">
+    <div class="max-w-7xl mx-auto px-4 md:px-8">
+      <div class="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 mb-10">
+        <div>
+          <h2 class="section-title text-2xl md:text-3xl font-bold text-white mb-3">
+            Why Choose Our Factory
+          </h2>
+          <p class="text-sm md:text-base text-brand-gray max-w-xl">
+            Engineered process, factory environment and industrial discipline – not just a small workshop – to give
+            you consistent, repeatable results on every batch.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 text-sm">
+        <div class="hover-card glass-panel rounded-2xl p-6 border border-white/10">
+          <h3 class="font-semibold text-white mb-2">Full Metal Pre-Treatment Line</h3>
+          <p class="text-brand-gray">
+            Multi-stage washing and chemical treatment to remove oil, scale and residues, and prepare the metal surface
+            for optimal powder adhesion.
+          </p>
+        </div>
+        <div class="hover-card glass-panel rounded-2xl p-6 border border-white/10">
+          <h3 class="font-semibold text-white mb-2">Controlled Industrial Oven Curing</h3>
+          <p class="text-brand-gray">
+            Curing profiles are monitored to match manufacturer recommendations, preventing under-cured or over-baked
+            finishes.
+          </p>
+        </div>
+        <div class="hover-card glass-panel rounded-2xl p-6 border border-white/10">
+          <h3 class="font-semibold text-white mb-2">Architectural-Grade Coatings</h3>
+          <p class="text-brand-gray">
+            Systems suitable for external facades, gates, aluminium profiles and components exposed to sun, sand and
+            humidity.
+          </p>
+        </div>
+        <div class="hover-card glass-panel rounded-2xl p-6 border border-white/10">
+          <h3 class="font-semibold text-white mb-2">Anti-Corrosion Chemical Treatment</h3>
+          <p class="text-brand-gray">
+            Proper activation and conversion coating to delay rust and ensure long-term corrosion resistance.
+          </p>
+        </div>
+        <div class="hover-card glass-panel rounded-2xl p-6 border border-white/10">
+          <h3 class="font-semibold text-white mb-2">Durable Finishes for Villas & Industry</h3>
+          <p class="text-brand-gray">
+            From villa gates to warehouse steel, finishes are specified to withstand real site conditions, not only
+            showroom environments.
+          </p>
+        </div>
+        <div class="hover-card glass-panel rounded-2xl p-6 border border-white/10">
+          <h3 class="font-semibold text-white mb-2">Fast Turnaround & Professional Service</h3>
+          <p class="text-brand-gray">
+            Clear lead times, organised receiving and dispatch, and technical support for contractors and consultants.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES CARDS -->
+  <section id="services" class="py-16 md:py-20 bg-black/70 border-t border-white/10 fade-section">
+    <div class="max-w-7xl mx-auto px-4 md:px-8">
+      <div class="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 mb-10">
+        <div>
+          <h2 class="section-title text-2xl md:text-3xl font-bold text-white mb-3">
+            Our Services
+          </h2>
+          <p class="text-sm md:text-base text-brand-gray max-w-xl">
+            End-to-end finishing services, from surface preparation to the final visual inspection, designed around
+            steel and aluminium components.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 text-sm">
+        <div class="hover-card glass-panel rounded-2xl p-6 border border-white/10">
+          <h3 class="font-semibold text-white mb-2">Powder Coating</h3>
+          <p class="text-brand-gray">
+            Electrostatic powder application for steel and aluminium components with controlled film thickness and
+            finish quality.
+          </p>
+        </div>
+        <div class="hover-card glass-panel rounded-2xl p-6 border border-white/10">
+          <h3 class="font-semibold text-white mb-2">Sandblasting</h3>
+          <p class="text-brand-gray">
+            Mechanical surface preparation for heavily rusted or fabricated steel, creating a profile suitable for
+            coating systems.
+          </p>
+        </div>
+        <div class="hover-card glass-panel rounded-2xl p-6 border border-white/10">
+          <h3 class="font-semibold text-white mb-2">Metal Washing Line</h3>
+          <p class="text-brand-gray">
+            Continuous pre-treatment line with degreasing, rinsing and chemical stages to clean and activate metal
+            surfaces.
+          </p>
+        </div>
+        <div class="hover-card glass-panel rounded-2xl p-6 border border-white/10">
+          <h3 class="font-semibold text-white mb-2">Industrial Coatings</h3>
+          <p class="text-brand-gray">
+            Systems suited to warehouses, factories and steel structures that require high impact and abrasion
+            resistance.
+          </p>
+        </div>
+        <div class="hover-card glass-panel rounded-2xl p-6 border border-white/10">
+          <h3 class="font-semibold text-white mb-2">Architectural Finishes</h3>
+          <p class="text-brand-gray">
+            Premium finishes for facades, aluminium profiles, louvers, gates and architectural steel packages.
+          </p>
+        </div>
+        <div class="hover-card glass-panel rounded-2xl p-6 border border-white/10">
+          <h3 class="font-semibold text-white mb-2">Decorative Finishes</h3>
+          <p class="text-brand-gray">
+            Matte, glossy and semi-gloss systems, texture effects and special finishes for interior and decorative
+            metalwork.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COLOURS & FINISHES -->
+  <section id="colours" class="py-16 md:py-20 bg-brand-panel/80 border-t border-white/10 fade-section">
+    <div class="max-w-7xl mx-auto px-4 md:px-8 grid lg:grid-cols-[1.3fr,1fr] gap-10 items-start">
+      <div>
+        <h2 class="section-title text-2xl md:text-3xl font-bold text-white mb-3">
+          Colours & Finishes
+        </h2>
+        <p class="text-sm md:text-base text-brand-gray mb-4">
+          High Quality Powder Coating Factory offers a wide selection of colours and textures to match both technical
+          specifications and design intent.
+        </p>
+        <ul class="space-y-2 text-sm text-brand-gray">
+          <li><strong>RAL Colour Collection:</strong> full range of standard RAL shades for architectural and industrial projects.</li>
+          <li><strong>Texture Finishes:</strong> fine texture, sand and special effect powders to hide minor surface
+            imperfections and create a robust look.</li>
+          <li><strong>Gloss Levels:</strong> matte, satin, semi-gloss and high-gloss systems depending on the required
+            visual effect and cleaning regime.</li>
+          <li><strong>Metallic & Special Effects:</strong> metallics, speckled finishes and decorative systems for
+            feature elements.</li>
+          <li><strong>Wood-Effect (on demand):</strong> wood-effect finishes for aluminium profiles and decorative
+            components where specified.</li>
+        </ul>
+      </div>
+
+      <div class="glass-panel rounded-2xl p-6 border border-white/10">
+        <p class="text-xs uppercase tracking-[0.18em] text-brand-muted mb-3">Design support</p>
+        <p class="text-sm text-brand-gray mb-4">
+          Our team can assist with selecting suitable systems and colours based on exposure, environment and
+          maintenance requirements.
+        </p>
+        <div class="grid grid-cols-4 gap-2">
+          <div class="h-10 rounded-lg bg-slate-900 border border-white/10"></div>
+          <div class="h-10 rounded-lg bg-brand-gold"></div>
+          <div class="h-10 rounded-lg bg-slate-400"></div>
+          <div class="h-10 rounded-lg bg-slate-700"></div>
+          <div class="h-10 rounded-lg bg-zinc-800"></div>
+          <div class="h-10 rounded-lg bg-zinc-500"></div>
+          <div class="h-10 rounded-lg bg-amber-600"></div>
+          <div class="h-10 rounded-lg bg-slate-300"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORKFLOW -->
+  <section id="workflow" class="py-16 md:py-20 bg-black/70 border-t border-white/10 fade-section">
+    <div class="max-w-7xl mx-auto px-4 md:px-8">
+      <div class="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 mb-10">
+        <div>
+          <h2 class="section-title text-2xl md:text-3xl font-bold text-white mb-3">
+            Workflow – How We Work
+          </h2>
+          <p class="text-sm md:text-base text-brand-gray max-w-xl">
+            A clear, step-by-step process from receiving the material until final quality inspection and dispatch.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-3 lg:grid-cols-6 gap-4 text-xs md:text-sm">
+        <div class="glass-panel rounded-2xl p-4 border border-white/10 text-center">
+          <p class="text-[11px] uppercase tracking-[0.18em] text-brand-muted mb-1">01</p>
+          <h3 class="font-semibold text-white mb-1">Surface Preparation</h3>
+          <p class="text-brand-gray">
+            Visual inspection, removal of sharp edges, welding spatters and heavy contamination.
+          </p>
+        </div>
+        <div class="glass-panel rounded-2xl p-4 border border-white/10 text-center">
+          <p class="text-[11px] uppercase tracking-[0.18em] text-brand-muted mb-1">02</p>
+          <h3 class="font-semibold text-white mb-1">Chemical Treatment</h3>
+          <p class="text-brand-gray">
+            Degreasing, rinsing and conversion coating in the pre-treatment line.
+          </p>
+        </div>
+        <div class="glass-panel rounded-2xl p-4 border border-white/10 text-center">
+          <p class="text-[11px] uppercase tracking-[0.18em] text-brand-muted mb-1">03</p>
+          <h3 class="font-semibold text-white mb-1">Drying Line</h3>
+          <p class="text-brand-gray">
+            Water removal and surface drying before powder application.
+          </p>
+        </div>
+        <div class="glass-panel rounded-2xl p-4 border border-white/10 text-center">
+          <p class="text-[11px] uppercase tracking-[0.18em] text-brand-muted mb-1">04</p>
+          <h3 class="font-semibold text-white mb-1">Powder Application</h3>
+          <p class="text-brand-gray">
+            Electrostatic application with controlled coverage and thickness.
+          </p>
+        </div>
+        <div class="glass-panel rounded-2xl p-4 border border-white/10 text-center">
+          <p class="text-[11px] uppercase tracking-[0.18em] text-brand-muted mb-1">05</p>
+          <h3 class="font-semibold text-white mb-1">Oven Curing</h3>
+          <p class="text-brand-gray">
+            Components pass through industrial ovens following controlled temperature profiles.
+          </p>
+        </div>
+        <div class="glass-panel rounded-2xl p-4 border border-white/10 text-center">
+          <p class="text-[11px] uppercase tracking-[0.18em] text-brand-muted mb-1">06</p>
+          <h3 class="font-semibold text-white mb-1">Final Inspection</h3>
+          <p class="text-brand-gray">
+            Thickness, adhesion and visual checks before packing and dispatch.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="py-16 md:py-20 bg-brand-panel/80 border-t border-white/10 fade-section">
+    <div class="max-w-7xl mx-auto px-4 md:px-8">
+      <div class="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 mb-10">
+        <div>
+          <h2 class="section-title text-2xl md:text-3xl font-bold text-white mb-3">
+            Project Gallery
+          </h2>
+          <p class="text-sm md:text-base text-brand-gray max-w-xl">
+            A selection of coated work – more references and project lists are available on request.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-4 md:grid-rows-2 gap-4">
+        <!-- Main image -->
+        <div class="relative md:row-span-2 md:col-span-2 rounded-2xl overflow-hidden border border-white/10 glass-panel">
+          <img src="assets/gate-after-white.jpeg" alt="Powder coated villa gate"
+               class="w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+          <div class="absolute bottom-4 left-4 right-4 text-xs text-brand-gray">
+            <p class="font-semibold text-white text-sm">Villa main gate – architectural finish</p>
+            <p>Premium black powder coating with metallic accents and outdoor-grade system.</p>
+          </div>
+        </div>
+
+        <!-- Doors / railings -->
+        <div class="relative rounded-2xl overflow-hidden border border-white/10 glass-panel h-48 md:h-auto">
+          <img src="assets/playground-green.jpeg" alt="Powder coated railings" class="w-full h-full object-cover" />
+          <div class="absolute bottom-3 left-3 right-3 text-xs text-brand-gray bg-black/40 px-2 py-1 rounded">
+            Doors, railings & handrails
+          </div>
+        </div>
+
+        <!-- Aluminium profiles -->
+        <div class="relative rounded-2xl overflow-hidden border border-white/10 glass-panel h-48 md:h-auto">
+          <img src="assets/images/factory_3_web.jpg" alt="Coated aluminium profiles"
+               class="w-full h-full object-cover" />
+          <div class="absolute bottom-3 left-3 right-3 text-xs text-brand-gray bg-black/40 px-2 py-1 rounded">
+            Aluminium profiles & façades
+          </div>
+        </div>
+
+        <!-- Industrial structures -->
+        <div class="relative rounded-2xl overflow-hidden border border-white/10 glass-panel h-48 md:h-auto">
+          <img src="assets/playground-green.jpeg" alt="Industrial metal parts"
+               class="w-full h-full object-cover" />
+          <div class="absolute bottom-3 left-3 right-3 text-xs text-brand-gray bg-black/40 px-2 py-1 rounded">
+            Industrial steel & machinery parts
+          </div>
+        </div>
+
+        <!-- Before / after -->
+        <div class="relative rounded-2xl overflow-hidden border border-white/10 glass-panel h-48 md:h-auto">
+          <img src="assets/gate-after-white.jpeg" alt="Before and after powder coating"
+               class="w-full h-full object-cover" />
+          <div class="absolute bottom-3 left-3 right-3 text-xs text-brand-gray bg-black/40 px-2 py-1 rounded">
+            Before / after – refurbishment and recoating
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION & MAP + CONTACT -->
+  <section id="location" class="py-16 md:py-20 bg-black/80 border-t border-white/10 fade-section">
+    <div class="max-w-7xl mx-auto px-4 md:px-8 grid lg:grid-cols-[1.1fr,1.1fr] gap-10 items-start">
+      <!-- Contact info -->
+      <div id="contact">
+        <h2 class="section-title text-2xl md:text-3xl font-bold text-white mb-3">
+          Contact & Visit the Factory
+        </h2>
+        <p class="text-sm md:text-base text-brand-gray mb-6">
+          For technical discussions, quotations and project support, please contact the factory directly or schedule a
+          visit to our facility in Al Qusais Industrial Area 4 – Dubai.
+        </p>
+
+        <div class="space-y-4 text-sm">
+          <div class="glass-panel rounded-2xl p-4 border border-white/10 flex items-start gap-3">
+            <span class="text-xl">📍</span>
+            <div>
+              <p class="font-semibold text-white">Factory Address</p>
+              <p class="text-brand-gray">
+                High Quality Powder Coating Factory<br />
+                Al Qusais Industrial Area 4<br />
+                Dubai, United Arab Emirates
+              </p>
+            </div>
+          </div>
+
+          <div class="glass-panel rounded-2xl p-4 border border-white/10 flex items-start gap-3">
+            <span class="text-xl">📞</span>
+            <div>
+              <p class="font-semibold text-white">Phone & WhatsApp</p>
+              <p class="text-brand-gray">
+                Phone: <a href="tel:+971501992414" class="text-brand-gold hover:underline">+971 50 199 2414</a><br />
+                WhatsApp:
+                <a href="https://wa.me/971501992414?text=Hello,%20I%20am%20contacting%20you%20from%20the%20website.%20I%20would%20like%20to%20know%20more%20about%20your%20powder%20coating%20services%20and%20speak%20with%20someone%20from%20the%20team."
+                   class="text-brand-gold hover:underline">+971 50 199 2414</a>
+              </p>
+            </div>
+          </div>
+
+          <div class="glass-panel rounded-2xl p-4 border border-white/10 flex items-start gap-3">
+            <span class="text-xl">✉️</span>
+            <div>
+              <p class="font-semibold text-white">Email</p>
+              <p class="text-brand-gray">
+                <a href="mailto:info@highquality-powder.com" class="text-brand-gold hover:underline">
+                  info@highquality-powder.com
+                </a>
+              </p>
+            </div>
+          </div>
+
+          <div class="glass-panel rounded-2xl p-4 border border-white/10 flex items-start gap-3">
+            <span class="text-xl">⏰</span>
+            <div>
+              <p class="font-semibold text-white">Working Hours</p>
+              <p class="text-brand-gray">
+                Monday – Saturday: 8:00 AM – 6:00 PM<br />
+                Sunday: Closed
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap gap-3 mt-6 text-sm">
+          <a href="https://wa.me/971501992414?text=Hello,%20I%20am%20contacting%20you%20from%20the%20website.%20I%20would%20like%20to%20know%20more%20about%20your%20powder%20coating%20services%20and%20speak%20with%20someone%20from%20the%20team."
+             class="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-brand-gold text-black font-semibold shadow-soft hover:brightness-110 transition">
+            WhatsApp the Factory
+          </a>
+          <a href="tel:+971501992414"
+             class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-white/20 text-white text-sm hover:bg-white/5 transition">
+            Call Now
+          </a>
+        </div>
+      </div>
+
+      <!-- Map (نفس الـ iframe اللي عندك) -->
+      <div class="rounded-2xl overflow-hidden border border-white/10 glass-panel h-[320px] sm:h-[380px] lg:h-[420px]">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3607.3038347259567!2d55.396660575385!3d25.293993977648793!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjXCsDE3JzM4LjQiTiA1NcKwMjMnNTcuMyJF!5e0!3m2!1sen!2sae!4v1764695520903!5m2!1sen!2sae"
+          class="w-full h-full border-0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/10 bg-black text-center text-[11px] text-brand-muted py-6">
+    <p class="font-semibold tracking-[0.18em] uppercase text-white mb-1">
+      High Quality Powder Coating Factory · Dubai
+    </p>
+    <p>Professional powder coating factory serving architectural, industrial and decorative projects across the UAE.</p>
+    <p class="mt-2 text-[10px] text-brand-muted">© 2025 High Quality Powder Coating Factory. All rights reserved.</p>
+  </footer>
+
+  <!-- FLOATING WHATSAPP BUTTON -->
+  <a href="https://wa.me/971501992414?text=Hello,%20I%20am%20contacting%20you%20from%20the%20website.%20I%20would%20like%20to%20know%20more%20about%20your%20powder%20coating%20services%20and%20speak%20with%20someone%20from%20the%20team."
+     class="fixed z-50 bottom-5 right-5 md:bottom-7 md:right-7 w-14 h-14 rounded-full flex items-center justify-center bg-[#25D366] shadow-soft hover:scale-110 hover:shadow-lg transition-transform duration-200 ease-out"
+     aria-label="Contact on WhatsApp">
+    <svg class="w-7 h-7" viewBox="0 0 32 32" aria-hidden="true">
+      <path fill="#ffffff"
+        d="M16.003 3.2C9.56 3.2 4.32 8.44 4.32 14.883c0 2.575.86 4.958 2.32 6.886L5.2 26.8l5.207-1.413c1.836 1.007 3.94 1.596 6.096 1.596 6.443 0 11.683-5.24 11.683-11.683C28.187 8.44 22.447 3.2 16.003 3.2zm0 2.133c5.292 0 9.55 4.26 9.55 9.55 0 5.292-4.258 9.55-9.55 9.55-1.86 0-3.683-.545-5.258-1.576l-.376-.237-3.09.84.84-3.008-.247-.386c-1.154-1.8-1.76-3.884-1.76-6.183 0-5.29 4.26-9.55 9.55-9.55zm-4.02 4.57c-.22 0-.577.084-.88.42-.304.337-1.156 1.13-1.156 2.754 0 1.624 1.185 3.194 1.35 3.414.166.22 2.34 3.74 5.78 5.09 2.86 1.13 3.445.907 4.067.85.622-.056 2.004-.818 2.287-1.61.283-.79.283-1.468.198-1.61-.084-.14-.31-.22-.65-.385-.34-.168-2.004-.988-2.316-1.101-.31-.113-.536-.168-.763.168-.226.337-.875 1.102-1.074 1.328-.198.225-.396.253-.735.084-.34-.168-1.435-.53-2.735-1.693-1.011-.9-1.693-2.01-1.892-2.347-.198-.337-.02-.522.149-.69.153-.152.34-.396.509-.594.17-.196.226-.338.34-.563.113-.225.056-.42-.028-.592-.085-.168-.759-1.82-1.04-2.494-.275-.662-.557-.572-.776-.58-.22-.008-.505-.012-.785-.012z" />
+    </svg>
+  </a>
+
+  <!-- SIMPLE SCROLL ANIMATION SCRIPT -->
+  <script>
+    const sections = document.querySelectorAll('.fade-section');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    sections.forEach(sec => observer.observe(sec));
+  </script>
+</body>
+</html>
